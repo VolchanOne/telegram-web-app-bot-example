@@ -13,7 +13,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script>
         function setThemeClass() {
-            document.documentElement.className = Telegram.WebApp.colorScheme;
+            document.documentElement.className = window.Telegram.WebApp.colorScheme;
         }
         Telegram.WebApp.onEvent('themeChanged', setThemeClass);
         setThemeClass();
@@ -27,7 +27,7 @@
             font-size: 16px;
             margin: 0;
             padding: 0;
-            color-scheme: var(--tg-color-scheme);
+            /*color-scheme: var(--tg-color-scheme);*/
         }
 
         a {
@@ -236,7 +236,7 @@
     document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
     document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
 
-    Telegram.WebApp.MainButton
+    window.Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
         .show()
         .onClick(function(){ webviewClose(); });
