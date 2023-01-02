@@ -237,12 +237,14 @@
     document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
     document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
 
+     alert(1 );
+
     Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
         .show()
         .onClick(function(){ webviewClose(); });
 
-    alert(1 );
+
 
     Telegram.WebApp.onEvent('themeChanged', function() {
         document.querySelector('#themeData').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
